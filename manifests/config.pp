@@ -45,9 +45,9 @@ class carbonblack::config(
     ensure  => directory,
     recurse => true;
     'sensorsettings':
-    mode     => '0644',
-    path     => "${$config_dir}/sensorsettings.ini",
-    template => "${module_name}/sensorsettings.ini.erb";
+    mode    => '0644',
+    path    => "${$config_dir}/sensorsettings.ini",
+    content => template("${module_name}/sensorsettings.ini.erb");
     'oldsensor':
     ensure => absent,
     path   => "${log_dir}/cb/sensor";
