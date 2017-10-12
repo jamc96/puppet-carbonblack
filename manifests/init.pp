@@ -90,6 +90,18 @@ class carbonblack(
     if !$repo_source{
       fail('respository source is required for installation')
     }
+    if !$server{
+      fail('carbon black server is required')
+    }
+    if !$cb_servercert{
+      fail('carbon black server cert is required')
+    }
+    if !$sensor_clientcert{
+      fail('carbon black sensor client cert is required')
+    }
+    if !$sensor_clientkey{
+      fail('carbon black sensor client key is required')
+    }
   # carbonblack dependencies
   class { '::carbonblack::install': } ->
   class { '::carbonblack::config': } ~>
