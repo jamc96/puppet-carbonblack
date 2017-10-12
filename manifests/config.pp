@@ -27,7 +27,6 @@ class carbonblack::config(
   $tamper_level               = $::carbonblack::tamper_level,
   $sensor_exename             = $::carbonblack::sensor_exename,
   $process_filter_level       = $::carbonblack::process_filter_level,
-  $filter_known_dlls          = $::carbonblack::filter_known_dlls,
   $alert_criticality          = $::carbonblack::alert_criticality,
   $filter_known_dlls          = $::carbonblack::filter_known_dlls,
   $dont_ignore_cbserver       = $::carbonblack::dont_ignore_cbserver,
