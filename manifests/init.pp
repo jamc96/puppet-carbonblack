@@ -43,15 +43,15 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class carbonblack(
-  String $package_name      = $::carbonblack::params::package_name,
-  String $package_ensure    = 'present',
-  String $package_provider  = 'yum',
-  String $package_dir       = '/opt/cbsensor/',
-  String $package_source    = "${package_dir}/${package_name}",
-  String $repo_name         = 'cb-linux-sensor',
-  String $repo_ensure       = 'present',
-  String $repo_provider     = 'rpm',
-  Optional $repo_source     = undef,
+  $package_name     = $::carbonblack::params::package_name,
+  $package_ensure   = 'present',
+  $package_provider = 'yum',
+  $package_dir      = '/opt/cbsensor/',
+  $package_source   = "${package_dir}/${package_name}",
+  $repo_name        = 'cb-linux-sensor',
+  $repo_ensure      = 'present',
+  $repo_provider    = 'rpm',
+  $repo_source      = undef,
 
 ) inherits carbonblack::params {
 
