@@ -43,11 +43,12 @@
 # Copyright 2017 Your name here, unless otherwise noted.
 #
 class carbonblack(
-  $package_name     = $::carbonblack::params::package_name,
+  $package_name_flg = $::carbonblack::params::package_name,
+  $package_name     = 'cbsensor',
   $package_ensure   = 'present',
   $package_provider = 'rpm',
   $package_dir      = '/opt/cbsensor/',
-  $package_source   = "${package_dir}/${package_name}",
+  $package_source   = "${package_dir}/${package_name_flg}",
   $repo_name        = 'cb-linux-sensor',
   $repo_ensure      = 'present',
   $repo_provider    = 'rpm',
