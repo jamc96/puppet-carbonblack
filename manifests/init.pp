@@ -45,7 +45,7 @@
 class carbonblack(
   $package_name     = $::carbonblack::params::package_name,
   $package_ensure   = 'present',
-  $package_provider = 'yum',
+  $package_provider = 'rpm',
   $package_dir      = '/opt/cbsensor/',
   $package_source   = "${package_dir}/${package_name}",
   $repo_name        = 'cb-linux-sensor',
