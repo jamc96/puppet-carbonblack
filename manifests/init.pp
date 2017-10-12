@@ -42,7 +42,12 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class carbonblack {
+class carbonblack(
 
-
+) inherits carbonblack::params {
+  # carbonblack dependencies
+  class { '::carbonblack::install': } ->
+  class { '::carbonblack::config': } ~>
+  class { '::carbonblack::service': } ->
+  Class['::carbonblack']
 }
