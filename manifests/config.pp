@@ -41,9 +41,10 @@ class carbonblack::config(
 ) {
   # resources
   File{
-    ensure => $config_ensure,
-    owner  => $owner,
-    group  => $group,
+    ensure                  => $config_ensure,
+    owner                   => $owner,
+    group                   => $group,
+    selinux_ignore_defaults => true,
   }
   file {
     $config_dir:
