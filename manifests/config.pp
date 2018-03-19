@@ -48,8 +48,7 @@ class carbonblack::config(
   }
   file {
     $config_dir:
-    ensure  => directory,
-    recurse => true;
+    ensure  => directory;
     'sensorsettings':
     mode    => '0644',
     path    => "${$config_dir}/sensorsettings.ini",
