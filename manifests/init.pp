@@ -113,9 +113,13 @@ class carbonblack(
     if !$sensor_clientkey{
       fail('carbon black sensor client key is required')
     }
+  # carbonblack containment
+  contain carbonblack::install
+  contain carbonblack::config
+  contain carbonblack::service
+  contain carbonblack::params
   # carbonblack dependencies
-  class { '::carbonblack::install': } ->
-  class { '::carbonblack::config': } ~>
-  class { '::carbonblack::service': } ->
-  Class['::carbonblack']
+  Class['::carbonblack::install']
+  -> Class['::carbonblack::config']
+  ~> Class['::carbonblack::service']
 }
