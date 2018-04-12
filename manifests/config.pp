@@ -34,16 +34,13 @@ class carbonblack::config(
   $users_to_ignore            = $::carbonblack::users_to_ignore,
   $proxy                      = $::carbonblack::proxy,
   $config_dir                 = $::carbonblack::config_dir,
-  $owner                      = $::carbonblack::owner,
-  $group                      = $::carbonblack::group,
-  $config_ensure              = $::carbonblack::config_ensure,
   $log_dir                    = $::carbonblack::log_dir,
 ) {
   # resources
   File{
-    ensure                  => $config_ensure,
-    owner                   => $owner,
-    group                   => $group,
+    ensure                  => 'present',
+    owner                   => 'root',
+    group                   => 'root',
     selinux_ignore_defaults => true,
   }
   file {

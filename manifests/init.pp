@@ -93,9 +93,6 @@ class carbonblack(
   $log_dir                    = '/var/log/',
   $service_name               = 'cbdaemon',
   $service_ensure             = 'running',
-  $service_enable             = true,
-  $service_hasrestart         = true,
-  $service_hasstatus          = true,
 ) inherits carbonblack::params {
 
     if !$repo_source{
